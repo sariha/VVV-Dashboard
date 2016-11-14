@@ -80,69 +80,69 @@ class defaults extends hosts implements host_interface {
 	public function host_list() {
 
 		$defaults = array(
-			'wordpress-default' => array(
-				'hostname'        => 'wordpress-default',
-				'domain'          => 'local.wordpress.dev',
-				'web_root'        => '/srv/www',
-				'host_path'       => '/srv/www/wordpress-default',
-				'public_dir'      => 'wordpress-default',
-				'wp_path'         => '/srv/www/wordpress-default',
-				'wp_content_path' => '/srv/www/wordpress-default/wp-content',
-				'composer_path'   => '',
-				'wp_config_path'  => '/srv/www/wordpress-default/wp-config.php',
-				'env_path'        => '',
-				'debug_log'       => '',
-				'wp_is_installed' => 'true',
-				'is_wp_site'      => 'true',
-			),
-
-			'wordpress-trunk' => array(
-				'hostname'        => 'wordpress-trunk',
-				'domain'          => 'local.wordpress-trunk.dev',
-				'web_root'        => '/srv/www',
-				'host_path'       => '/srv/www/wordpress-trunk',
-				'public_dir'      => 'wordpress-trunk',
-				'wp_path'         => '/srv/www/wordpress-trunk',
-				'wp_content_path' => '/srv/www/wordpress-trunk/wp-content',
-				'composer_path'   => '',
-				'wp_config_path'  => '/srv/www/wordpress-trunk/wp-config.php',
-				'env_path'        => '',
-				'debug_log'       => '',
-				'wp_is_installed' => 'true',
-				'is_wp_site'      => 'true',
-			),
-
-			'wordpress-develop' => array(
-				'hostname'        => 'wordpress-develop',
-				'domain'          => 'src.wordpress-develop.dev',
-				'web_root'        => '/srv/www',
-				'host_path'       => '/srv/www/wordpress-develop/src',
-				'public_dir'      => 'wordpress-develop',
-				'wp_path'         => '/srv/www/wordpress-develop/src',
-				'wp_content_path' => '/srv/www/wordpress-develop/src/wp-content',
-				'composer_path'   => '',
-				'wp_config_path'  => '/srv/www/wordpress-develop/src/wp-config.php',
-				'env_path'        => '',
-				'debug_log'       => '',
-				'wp_is_installed' => 'true',
-				'is_wp_site'      => 'true',
-			),
-
-			'build/wordpress-develop' => array(
-				'hostname'        => 'build.wordpress-develop',
-				'domain'          => 'build.wordpress-develop.dev',
-				'web_root'        => '/srv/www',
-				'host_path'       => '/srv/www/wordpress-develop/build',
-				'public_dir'      => 'build',
-				'wp_path'         => '/srv/www/wordpress-develop/build',
-				'wp_content_path' => '/srv/www/wordpress-develop/build/wp-content',
-				'composer_path'   => '',
-				'wp_config_path'  => '/srv/www/wordpress-develop/build/wp-config.php',
-				'env_path'        => '',
-				'debug_log'       => '',
-				'wp_is_installed' => 'true',
-				'is_wp_site'      => 'true',
-			)
+//			'wordpress-default' => array(
+//				'hostname'        => 'wordpress-default',
+//				'domain'          => 'local.wordpress.dev',
+//				'web_root'        => '/srv/www',
+//				'host_path'       => '/srv/www/wordpress-default',
+//				'public_dir'      => 'wordpress-default',
+//				'wp_path'         => '/srv/www/wordpress-default',
+//				'wp_content_path' => '/srv/www/wordpress-default/wp-content',
+//				'composer_path'   => '',
+//				'wp_config_path'  => '/srv/www/wordpress-default/wp-config.php',
+//				'env_path'        => '',
+//				'debug_log'       => '',
+//				'wp_is_installed' => 'true',
+//				'is_wp_site'      => 'true',
+//			),
+//
+//			'wordpress-trunk' => array(
+//				'hostname'        => 'wordpress-trunk',
+//				'domain'          => 'local.wordpress-trunk.dev',
+//				'web_root'        => '/srv/www',
+//				'host_path'       => '/srv/www/wordpress-trunk',
+//				'public_dir'      => 'wordpress-trunk',
+//				'wp_path'         => '/srv/www/wordpress-trunk',
+//				'wp_content_path' => '/srv/www/wordpress-trunk/wp-content',
+//				'composer_path'   => '',
+//				'wp_config_path'  => '/srv/www/wordpress-trunk/wp-config.php',
+//				'env_path'        => '',
+//				'debug_log'       => '',
+//				'wp_is_installed' => 'true',
+//				'is_wp_site'      => 'true',
+//			),
+//
+//			'wordpress-develop' => array(
+//				'hostname'        => 'wordpress-develop',
+//				'domain'          => 'src.wordpress-develop.dev',
+//				'web_root'        => '/srv/www',
+//				'host_path'       => '/srv/www/wordpress-develop/src',
+//				'public_dir'      => 'wordpress-develop',
+//				'wp_path'         => '/srv/www/wordpress-develop/src',
+//				'wp_content_path' => '/srv/www/wordpress-develop/src/wp-content',
+//				'composer_path'   => '',
+//				'wp_config_path'  => '/srv/www/wordpress-develop/src/wp-config.php',
+//				'env_path'        => '',
+//				'debug_log'       => '',
+//				'wp_is_installed' => 'true',
+//				'is_wp_site'      => 'true',
+//			),
+//
+//			'build/wordpress-develop' => array(
+//				'hostname'        => 'build.wordpress-develop',
+//				'domain'          => 'build.wordpress-develop.dev',
+//				'web_root'        => '/srv/www',
+//				'host_path'       => '/srv/www/wordpress-develop/build',
+//				'public_dir'      => 'build',
+//				'wp_path'         => '/srv/www/wordpress-develop/build',
+//				'wp_content_path' => '/srv/www/wordpress-develop/build/wp-content',
+//				'composer_path'   => '',
+//				'wp_config_path'  => '/srv/www/wordpress-develop/build/wp-config.php',
+//				'env_path'        => '',
+//				'debug_log'       => '',
+//				'wp_is_installed' => 'true',
+//				'is_wp_site'      => 'true',
+//			)
 		);
 
 		$host_info = array();
@@ -198,11 +198,18 @@ class defaults extends hosts implements host_interface {
 				$this->set_wp_config_path();
 				$this->set_config_settings();
 				$this->wp_is_installed();
+				if($this->wp_is_installed()===false) {
+					$this->is_wp_site = false;
+				}
 			} // end foreach
+
 
 			$host_data         = $this->get_host_info();
 			$key               = ( ! empty( $this->domain ) && $this->domain != 'N/A' ) ? $this->domain : $this->hostname;
+
 			$host_info[ $key ] = $host_data;
+
+
 
 		} // end foreach
 

@@ -260,7 +260,7 @@ class wp_starter extends hosts implements host_interface {
 		$array2       = array_chunk( $array1, 27 )[0];
 		$env_sec      = implode( PHP_EOL, $array2 );
 		$env_array    = explode( 'break;', $env_sec );
-		$env          = trim( $config_array['WORDPRESS_ENV'] );
+		$env          = (!empty($config_array['WORDPRESS_ENV'])) ? trim( $config_array['WORDPRESS_ENV'] ) : '';
 
 		foreach ( $env_array as $key => $chunk ) {
 			$chunk = str_replace(

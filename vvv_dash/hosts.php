@@ -70,6 +70,7 @@ class hosts implements host_interface {
 	}
 
 	public function set_domain( $domain = '' ) {
+
 		//$this->domain = $domain;
 		if(! empty($domain)) {
 			$this->domain = $domain;
@@ -77,7 +78,32 @@ class hosts implements host_interface {
 			$domain       = file_get_contents( $this->host_path . '/vvv-hosts' );
 			$this->domain = trim( $domain );
 		} else {
-			$this->domain = 'N/A';
+
+			$path_to_check = '/etc/nginx/custom-sites/';
+			$needle = $this->host_path;
+
+			foreach(glob($path_to_check . '*.conf') as $filename)
+			{
+				foreach(file($filename) as $fli=>$fl)
+				{
+					if(strpos($fl, $needle)!==false)
+					{
+						//find the domain
+						foreach(file($filename) as $key=>$line_value) {
+							if(strpos($line_value, 'server_name')!==false) {
+
+								$domains = explode(' ', trim( str_replace(';','', str_replace('server_name','',$line_value)) ));
+								$this->domain = $domains[0];
+
+								return $this->domain;
+							}
+						}
+					}
+				}
+			}
+
+			//in case nothin' found
+			$this->domain = 'N/A ('.$this->host_path.')';
 		}
 		return $this->domain;
 	}
